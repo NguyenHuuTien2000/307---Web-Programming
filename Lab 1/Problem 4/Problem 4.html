@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML Tables</title>
+    </head>
+    <body>
+        <table style="margin-left: auto; margin-right: auto">
+            <colgroup>
+                <col style="width: 250px;" />
+                <col style="width: 200px;" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h2><i>Fresh Fruits</i></h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>It has long been known that a diet that includes at least a few servings of fresh fruit every day will help keep you healthy, fit and trim</p>
+                    </td>
+                    <td>
+                        <img src="Image/fruit.jpg" width="200px"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        <table border="1" width="200px" cellpadding="2px">
+                            <colgroup>
+                                <col style="width: 40px;" />
+                                <col style="width: 40px;" />
+                                <col style="width: 40px;" />
+                                <col style="width: 40px;" />
+                                <col style="width: 40px;" />
+                            </colgroup>
+                            <tr>
+                                <td colspan="3">Tile goes here</td>
+                                <td>A</td>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">C</td>
+                                <td>D</td>
+                                <td>E</td>
+                                <td>F</td>
+                                <td>G</td>
+                            </tr>
+                            <tr>
+                                <td>H</td>
+                                <td colspan="2" style="text-align: center">I</td>
+                                <td rowspan="2">J</td>
+                            </tr>
+                            <tr>
+                                <td>K</td>
+                                <td>L</td>
+                                <td>M</td>
+                            </tr>
+                            <tr>
+                                <td>N</td>
+                                <td colspan="4" style="text-align: center">O</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
