@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form name="Register" action="" method="post">
+        <table border="1" style="margin-left: auto; margin-right: auto;" cellpadding="3px" cellspacing="0">
+            <colgroup>
+                <col style="width: 200px;">
+                <col style="width: 120px;">
+                <col style="width: 10px;">
+                <col style="width: 90px;">
+            </colgroup>
+            <tr>
+                <td>
+                    <b>Last Name</b>
+                </td>
+                <td colspan="3">
+                    <input type="text" name="lastName" id="lastName" value="Nakov" style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>First Name</b>
+                </td>
+                <td colspan="3">
+                    <input type="text" name="firstName" id="firstName" value="Svetlin" style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Address</b>
+                </td>
+                <td colspan="3">
+                    <textarea name="address" id="address" cols="34" rows="4">17 Hristo Botev Str.&#10;floor 13, apt. 12</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>City</b>
+                </td>
+                <td>
+                    <input type="text" name="city" id="city" value="Kaspichan">
+                </td>
+                <td>
+                    <b>State</b>
+                </td>
+                <td>
+                    <input type="text" name="state" id="state" size="7">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Zip/Postal Code</b>
+                </td>
+                <td colspan="3">
+                    <input type="number" name="zipCode" id="zipCode" style="width: 25%;" value="9235">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Country</b>
+                </td>
+                <td colspan="3">
+                    <select name="country" id="country" style="width: 60%;">
+                        <option value="Bulgaria" selected="selected">Bulgaria</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Phone (country code, area code, number)</b>
+                </td>
+                <td colspan="3">
+                    (+
+                    <input type="number" name="birthMonth" id="birthMonth" style="width: 20%;" value="359">
+                    )
+                    <input type="number" name="birthDay" id="birthDay" style="width: 20%;" value="88">
+                    -
+                    <input type="number" name="birthMonth" id="birthMonth" style="width: 35%;" value="8334343">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>E-mail</b>
+                </td>
+                <td colspan="3">
+                    <input type="email" name="email" id="email" value="nakov@kaspichan.org" style="width: 95%;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Birthday</b>
+                </td>
+                <td colspan="3">
+                    Month
+                    <input type="number" name="birthMonth" id="birthMonth" style="width: 10%;" max="12" min="1" value="06">
+                    Day
+                    <input type="number" name="birthDay" id="birthDay" style="width: 10%;" max="31" min="1" value="14">
+                    Year(4 digit)
+                    <input type="number" name="birthMonth" id="birthMonth" style="width: 15%;" max="9999" min="1900" value="1980">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Gender</b>
+                </td>
+                <td colspan="3">
+                    <select name="gender" id="gender" style="width: 20%;">
+                        <option value="Male" selected>Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Starting date</b>
+                </td>
+                <td colspan="3">
+                    <input type="radio" name="startDate" id="spring2006" value="Spring 2006" checked>
+                    Spring 2006
+                    <input type="radio" name="startDate" id="summer2006" value="Summer 2006">
+                    Summer 2006
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Comments/Questions</b>
+                </td>
+                <td colspan="3">
+                    <textarea name="address" id="address" cols="34" rows="6">Please send me more information about the lodging</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center;">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear this form</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        button {
+            width: 160px;
+            height: 40px;
+            background-color: white;
+            font-size: 14px;
+            color: darkmagenta;
+            border: 3px solid darkmagenta;
+        }
+        label {
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        input {
+            height: 30px;
+        }
+        #accMngBtn{
+            width: 160px;
+            height: 40px;
+            background-color: darkmagenta;
+            font-size: 14px;
+            color: white;
+        }
+        #header2 {
+            border: 2px dashed darkmagenta;
+            background-color: whitesmoke; 
+            padding-left: 5px;
+        }
+    </style>
+    <title>Violet on Wednesday - Your Account</title>
+</head>
+<body>
+    <div id="header2">
+        <h3>TÀI KHOẢN CỦA BẠN</h3>
+    </div>
+    <br>
+    <div id="informationArea">
+        <form name="accountDetail" action="" method="post">
+            <table style="margin-right: auto; margin-left: auto;" cellspacing="6px">
+                <colgroup>
+                    <col style="width: 400px;">
+                    <col style="width: 400px;">
+                </colgroup>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" id="accMngBtn" name="accMngBtn">QUẢN LÝ TÀI KHOẢN</button>
+                        <button type="submit" id="orderMngBtn" name="orderMngBtn">QUẢN LÝ ĐƠN HÀNG</button>
+                        <button type="submit" id="passChangeBtn" name="passChangeBtn">THAY ĐỔI MẬT KHẨU</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>Bạn có thể cập nhật lại thông tin của mình tại các trường dưới đây</p>
+                        <p>Lưu ý: Những trường có dấu "*" là bắt buộc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fullName">Họ và tên*</label>
+                        <br>
+                        <input type="text" name="fullName" id="fullName" required value="Nguyễn Văn A" size="40">
+                    </td>
+                    <td>
+                        <label for="doB">Ngày sinh</label>
+                        <br>
+                        <input type="date" name="doB" id="doB" placeholder="01/01/1990" size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="city">Tỉnh - Thành phố*</label>
+                        <br>
+                        <input type="text" name="city" id="city" required value="TP.Hồ Chí Minh" size="40">
+                    </td>
+                    <td>
+                        <label for="company">Công ty</label>
+                        <br>
+                        <input type="text" name="company" id="company" placeholder="Công ty của bạn" size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="district">Quận - Huyện*</label>
+                        <br>
+                        <input type="text" name="district" id="district" required value="Quận 5" size="40">
+                    </td>
+                    <td>
+                        <label for="profession">Chức vụ</label>
+                        <br>
+                        <input type="text" name="profession" id="profession" placeholder="Chức vụ tại công ty" size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Địa chỉ*</label>
+                        <br>
+                        <input type="text" name="address" id="address" required value="271/2 An Dương Vương, Phường 3, Quận 5, TP.Hồ Chí Minh" size="40">
+                    </td>
+                    <td>
+                        <label for="favFlowerType">Bạn thích loại hoa</label>
+                        <br>
+                        <input type="text" name="favFlowerType" id="favFlowerType" placeholder="Hoa hồng, Hoa lan,..." size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phoneNumber">Số điện thoại*</label>
+                        <br>
+                        <input type="text" name="phoneNumber" id="phoneNumber" required value="0973 371 346" size="40">
+                    </td>
+                    <td>
+                        <label for="favFlowerColor">Bạn thích màu hoa</label>
+                        <br>
+                        <input type="text" name="favFlowerColor" id="favFlowerColor" placeholder="Màu đỏ, Màu tím,..." size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email*</label>
+                        <br>
+                        <input type="email" name="email" id="email" required value="nguyenvana@gmail.com" size="40">
+                    </td>
+                    <td>
+                        <label for="favFlowerStyle">Phong cách cắm hoa</label>
+                        <br>
+                        <input type="text" name="favFlowerStyle" id="favFlowerStyle" placeholder="Cổ điển, Hiện đại, Đơn giản, Dễ thương,..." size="40">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" id="updateInfoBtn" name="updateInfoBtn">CẬP NHẬT THÔNG TIN</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
