@@ -1,0 +1,58 @@
+table {
+  border-collapse: separate;
+  border-spacing: 8px;
+  font-family: "Roboto", sans-serif;
+  background-color: #595a59;
+}
+
+tbody {
+  font-size: small;
+}
+
+th {
+  color: #afafaf;
+  column-span: 2;
+  font-weight: lighter;
+}
+
+td:nth-child(1) {
+  color: white;
+  font-weight: lighter;
+  font-style: italic;
+  vertical-align: top;
+}
+
+#dot {
+  height: 10px;
+  width: 10px;
+  background-color: #71B47A;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+td:nth-child(2) {
+  color: #c8c487;
+}
+
+#status {
+  font-weight: bold;
+  color: #e02b38;
+}
+
+#time {
+  color: #aaabad;
+}
+
+#action {
+  color: #aaabad;
+}
+
+a {
+  color: #c8c487;
+  text-decoration: none;
+}
+
+#stat {
+  font-weight: bold;
+  color: #bb662c;
+}

@@ -1,0 +1,109 @@
+div.articles {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1265px;
+}
+
+div.block1,.block2 {
+    width: 600px;
+    padding: 10px;
+    border: 1px thin black;
+    box-shadow: -1px 1px 2px gray, 1px 1px 2px gray;
+    font-family: "Roboto", sans-serif;
+    display: inline-block;
+}
+
+div.block2 {
+    float: right;
+}
+
+hr {
+    width: 98%;
+    border-top: 1px dashed gray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+div.red_icon {
+    width: 6px;
+    height: 15px;
+    display: inline-block;
+    transform: skew(-20deg);
+    margin-left: 5px;
+    margin-right: 10px;
+    background: red;
+}
+
+.fa-youtube-play {
+    color: gray;
+}
+
+article {
+    height: 150px;
+}
+
+article.article1 h5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+article.article1 h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+article.article1 h5 > a {
+    color: #0B739D;
+}
+
+article.article2 h2 {
+    margin-top: 0px;
+}
+
+article.article2 p.summary {
+    margin-bottom: 10px;
+}
+
+span.time_posted {
+    font-weight: 100;
+    color: grey;
+    font-size: 12px;
+}
+
+span.category {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+ul {
+    padding-left: 20px;
+    padding-bottom: 0;
+}
+
+
+
+span.poster > a {
+    font-weight: bold;
+    font-size: 13px;
+    color: #0BC3E5;
+}
+
+div.post_detail {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article.article2 img {
+    float: left;
+    width: 40px;
+    height: 40px;
+}

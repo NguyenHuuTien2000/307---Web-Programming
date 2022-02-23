@@ -1,0 +1,38 @@
+table, th, td {
+    padding: 5px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: "Roboto", sans-serif;
+}
+
+th {
+    text-align: left;
+    color: white;
+    font-weight: 100;
+    background-color: #53B606;
+}
+
+img {
+    width: 40px;
+    height: 20px;
+}
+
+.col1 {
+    width: 200px;
+}
+
+.col2 {
+    width: 150px;
+}
+
+.col3 {
+    width: 175px;
+}
+
+.col4 {
+    width: 100px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ECECD8;
+}
