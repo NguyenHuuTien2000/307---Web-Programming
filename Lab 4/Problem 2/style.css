@@ -1,0 +1,7 @@
+ul.sub-menu {
+    display: none;
+}
+
+ul.main-menu li:hover ul {
+    display: block;
+}

@@ -1,0 +1,86 @@
+div.menu-container {
+    background-color: #284A70;
+    border-bottom: 5px solid #F4A024;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+ul.main-menu {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+ul.main-menu > li {
+    position: relative;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    margin-left: -4px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+ul.main-menu > li > a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 30px;
+    color: white;
+    text-align: center;
+}
+
+ul.main-menu > li:first-child {
+    background-color: #F4A024;
+}
+
+ul.main-menu > li:hover > a {
+    background-color: #F4A024;
+}
+
+ul.sub-menu {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 45px;
+    min-width: 200px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: #284A70;
+}
+
+ul.main-menu li:hover ul.sub-menu {
+    display: block;
+}
+
+ul.sub-menu > li {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 2px solid white;
+}
+
+ul.sub-menu > li > a {
+    display: block;
+    padding: 13px 15px;
+    text-decoration: none;
+    color: white;
+}
+
+ul.sub-menu > li:hover > a {
+    background-color: #F4A024;
+}
+
+li.has-children:after {
+    font-family: FontAwesome;
+    content: '\f107';
+    color: white;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+}

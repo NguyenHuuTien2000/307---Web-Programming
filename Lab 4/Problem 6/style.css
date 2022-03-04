@@ -1,0 +1,23 @@
+div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 400px;
+    border-radius: 2%;
+    box-shadow: 0px 9px 11px 4px #DEDEDE;
+}
+
+div:hover {
+    box-shadow: 0px 9px 11px 9px #DEDEDE;
+}
+
+div > img {
+    border-top-right-radius: 2%;
+    border-top-left-radius: 2%;
+    width: 300px;
+    height: 300px;
+}
+
+h3,p {
+    margin-left: 20px;
+}

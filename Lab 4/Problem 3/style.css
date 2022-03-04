@@ -1,0 +1,63 @@
+.main_container {
+    border-radius: 4px;
+    background-color: #EEEEEE;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+h3 {
+    padding: 0px;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.box {
+    background-color: white;
+    padding: 15px;
+    height: 100px;
+    border: 2px solid gray;
+    margin-top: 40px;
+}
+
+div.box:nth-child(4) {
+    height: 115px;
+}
+
+img {
+    border: 1px solid gray;
+    height: 100px;
+    float: left;
+}
+
+p {
+    width: 55%;
+    display: inline-block;
+    margin: 0px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.btn_group {
+    height: 25px;
+    width: 40%;
+    float: right;
+    padding-left: 10px;
+}
+
+button:first-child {
+    padding: 4px;
+    color: white;
+    width: 55%;
+    height: 100%;
+    background: url('images/listen.png');
+}
+
+button:nth-child(2) {
+    padding: 4px;
+    color: white;
+    width: 40%;
+    height: 100%;
+    background: url('images/add.png');
+}

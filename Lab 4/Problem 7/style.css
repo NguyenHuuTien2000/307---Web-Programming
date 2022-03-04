@@ -1,0 +1,16 @@
+input {
+    width: 60px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-image: url(search_icon.png);
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    padding-left: 33px;
+}
+
+
+input:focus {
+    outline-color: #719ECE;
+    width: 200px;
+}

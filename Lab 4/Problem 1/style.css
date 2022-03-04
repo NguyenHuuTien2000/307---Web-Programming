@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Edwardian-Script";
+    src: url(EdwardianScriptITC.ttf);
+}
+
+header,p {
+    font-family: "Consolas";
+    color: #0094ff;
+}
+
+header {
+    font-weight: bold;
+}
+
+header > span {
+    font-size: 40px;
+    font-style: italic;
+    font-family: "Edwardian-Script";
+}
