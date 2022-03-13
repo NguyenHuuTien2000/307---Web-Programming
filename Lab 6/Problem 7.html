@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers from 1 to N</title>
+</head>
+<body>
+    <div class="output">
+        Numbers from 1 to 100: <span></span>
+    </div>
+    <script type="text/javascript">
+        function printToN(number) {
+            let line = "";
+            for (let i = 1; i <= number; i++) {
+                line += i + " ";
+            }
+            return line;
+        }
+        document.getElementsByTagName("span")[0].innerHTML = printToN(100);
+    </script>
+</body>
+</html>

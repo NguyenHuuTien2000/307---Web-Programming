@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Array of Objects</title>
+</head>
+<body>
+    <p id="output">
+
+    </p>
+
+    <script type="text/javascript">
+        let array = [
+            {
+                "Name" : "Product 1",
+                "Price" : "1200",
+                "Image" : "https://media.moddb.com/cache/images/mods/1/45/44106/thumb_620x2000/02.png"
+            },
+            {
+                "Name" : "Product 2",
+                "Price" : "6700",
+                "Image" : "https://media.moddb.com/cache/images/mods/1/45/44106/thumb_620x2000/file.2.png"
+            },
+            {
+                "Name" : "Product 3",
+                "Price" : "3400",
+                "Image" : "https://media.moddb.com/cache/images/mods/1/45/44106/thumb_620x2000/file.3.png"
+            },
+            {
+                "Name" : "Product 4",
+                "Price" : "1200",
+                "Image" : "https://media.moddb.com/cache/images/mods/1/45/44106/thumb_620x2000/02.1.png"
+            },
+        ];
+
+         
+        array.sort(comparePrice);
+
+        let out = document.getElementById("output");
+        for (let index = 0; index < array.length; index++) {
+            let name = array[index].Name;
+            let price = array[index].Price;
+            let line = document.createTextNode(name + " : " + price);
+            out.appendChild(line);
+            out.appendChild(document.createElement("br"));
+        }
+        output.style.fontSize = "20px";
+    </script>
+</body>
+</html>

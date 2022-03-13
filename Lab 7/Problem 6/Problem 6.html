@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="overlay">
+        <div id="message-box">
+            <h4>Overlay Title</h4>
+            <p>Click the button to close this box</p>
+            <button>Close</button>
+        </div>
+    </div>
+    <h2 class="example">A heading with class="example"</h2>
+    <p class="example">A paragraph with class="example".</p>
+    <p class="example">A paragraph 2 with class="example".</p>
+    <h3>A h3 element</h3>
+
+    <p>Click the button to show overlay effect:</p>
+    <div>
+        <button id="overlayOn">Overlay Activate</button>
+    </div>
+    
+    <hr>
+    <p>The CSS selector a[target] makes sure that all links with a target attribute gets a yellow background:</p>
+
+    <a href="https://www.w3schools.com">w3schools.com</a>
+    <a href="http://www.disney.com" target="_blank">disney.com</a>
+    <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+    <hr>
+    <div>
+        <h3>H3 element</h3>
+        <p>I am a p element, my parent is a div element.</p>
+    </div>
+
+    <div>
+        <h3>H3 element</h3>
+        <p>I am a p element, my parent is also a div element.</p>
+    </div>
+    <hr>
+
+    <script type="text/javascript">
+        let button = document.getElementById("overlayOn");
+        let overlay = document.getElementById("overlay");
+        button.addEventListener("click", function () {
+            overlay.style.display = "block";
+        },false);
+
+        let closeBtn = document.querySelector("#overlay button");
+        closeBtn.addEventListener("click", function () {
+            overlay.style.display = "none";
+        }, false)
+    </script>
+</body>
+
+</html>

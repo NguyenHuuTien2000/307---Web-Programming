@@ -1,0 +1,24 @@
+.box {
+    width: 400px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+#gray-bar {
+    background-color: gray;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+}
+
+#blue-bar {
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    width: 0%;
+    background-color: blue;
+    position: absolute;
+    height: 40px;
+}

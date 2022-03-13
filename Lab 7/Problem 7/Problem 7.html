@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts Messages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="buttonGroup">
+            <button type="button" class="btn success">Success</button>
+            <button type="button" class="btn danger">Danger</button>
+            <button type="button" class="btn warning">Warning</button>
+            <button type="button" class="btn info">Info</button>
+        </div>
+        <br>
+        <div id="alertArea">
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        let buttons = document.getElementById("buttonGroup");
+        let alertArea = document.getElementById("alertArea");
+        buttons.addEventListener("click", function (e) {
+            let btn = e.target;
+
+            if (btn.className.includes("success")) {
+                alertArea.innerHTML = `<div class="alertBox success">
+                <strong>Success!</strong> Indicates a successful or positive action. 
+                <span>&times;</span>
+                </div>`
+            }
+
+            if (btn.className.includes("danger")) {
+                alertArea.innerHTML = `<div class="alertBox danger">
+                <strong>Danger!</strong> Indicates a Dangerous or potentially negative action. 
+                <span>&times;</span>
+                </div>`
+            }
+
+            if (btn.className.includes("info")) {
+                alertArea.innerHTML = `<div class="alertBox info">
+                <strong>Info!</strong> Indicates a neutral informative change or action. 
+                <span>&times;</span>
+                </div>`
+            }
+
+            if (btn.className.includes("warning")) {
+                alertArea.innerHTML = `<div class="alertBox warning">
+                <strong>Warning!</strong> Indicates a warning that might need attention. 
+                <span>&times;</span>
+                </div>`
+            }
+        }, true);
+        
+        alertArea.addEventListener("click", function (e) {
+            if (e.target.tagName === "SPAN") {
+                alertArea.innerHTML = "";
+            }
+        },false);
+
+    </script>
+</body>
+
+</html>

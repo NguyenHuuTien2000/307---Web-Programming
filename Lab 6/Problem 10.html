@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequent Number</title>
+</head>
+<body>
+    <div id="output">
+
+    </div>
+    <script type="text/javascript">
+        function printArray(array) {
+            let line = "";
+            for (let i = 0; i < array.length; i++) {
+                line += array[i] + " ";
+            }
+            return line;
+        }
+
+        function mostFrequent(array) {
+            let hashMap = new Map();
+            for (let i = 0; i < array.length; i++) {
+                let number = array[i];
+                let freq = hashMap.get(number);
+                if (freq == undefined) {
+                    freq = 0;
+                }
+                hashMap.set(array[i], freq + 1);
+            }
+            
+            let number, freq = Number.NEGATIVE_INFINITY;
+            hashMap.forEach(function(value, key) {
+                if (value > freq) {
+                    number = key;
+                    freq = value;
+                }
+            })
+            return `${number} (${freq} times)`
+        }
+
+        let arr = [10, 23, 5, 47, 7, 98, 213, 976, 7, 10, 5, 7, 23, 5, 98, 7, 65, 9, 7];
+        let output = document.getElementById("output");
+        output.innerHTML = `${printArray(arr)} <br> Most repeated number: ${mostFrequent(arr)}`;
+    </script>
+</body>
+</html>

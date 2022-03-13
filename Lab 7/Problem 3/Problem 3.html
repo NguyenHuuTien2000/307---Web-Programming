@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h2>JavaScript Progress Bar</h2>
+        <div id="gray-bar">
+            <div id="blue-bar">
+                0%
+            </div>
+        </div>
+        <button>Click Me</button>
+    </div>
+    
+    <script type="text/javascript">
+        let button = document.querySelector("button");
+        let timer, bar, fullWidth, progress = 0;
+        button.addEventListener("click",function () {
+            fullWidth = document.getElementById("gray-bar").offsetWidth;
+            bar = document.getElementById("blue-bar");
+            timer = setInterval(increaseProgress,50);
+        },false);
+
+        function increaseProgress() {
+            if (progress == 100) {
+                clearInterval(timer);
+                stop;
+            } else {
+                progress++;
+                bar.style.width = fullWidth * (progress/100) + "px";
+                bar.innerHTML = progress + "%";
+            }
+        }
+    </script>
+</body>
+</html>

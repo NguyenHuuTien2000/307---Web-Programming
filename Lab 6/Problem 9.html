@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+</head>
+
+<body>
+    <div id="output">
+
+    </div>
+    <script type="text/javascript">
+        function printArray(array) {
+            let line = "";
+            for (let i = 0; i < array.length; i++) {
+                line += array[i] + " ";
+            }
+            return line;
+        }
+        function selectionSort(array) {
+            let currValIndex;
+            for (let i = 0; i < array.length; i++) {
+                currValIndex = i;
+                for (let j = i + 1; j < array.length; j++) {
+                    if (array[currValIndex] > array[j]) {
+                        currValIndex = j;
+                    }
+                }
+                if (i !== currValIndex) {
+                    let temp = array[i];
+                    array[i] = array[currValIndex];
+                    array[currValIndex] = temp;
+                }
+            }
+            return array;
+        }
+        let arr = [212,34,35,98,32,64,1,87,65];
+        let output = document.getElementById("output");
+        output.innerHTML = `${printArray(arr)} <br> ${printArray(selectionSort(arr))}`;
+    </script>
+</body>
+
+</html>
