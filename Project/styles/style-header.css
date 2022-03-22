@@ -1,0 +1,301 @@
+/* Universal styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto;
+}
+
+h1,h2,h3,h4 {
+    font-family: Merriweather;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,.active {
+    text-decoration: none;
+    color: #CDB654;
+}
+
+/*--------------------------Top Header--------------------------*/
+
+.TopHeader {
+    margin: 0px;
+    height: 45px;
+    line-height: 45px;
+    color: white ;
+    background-color: black;
+    border-bottom: 1px solid #808080;
+}
+
+.TopHeader .fa {
+    color: #CDB654;
+    margin-right: 5px;
+}
+
+/*--------------------------Navigation Elements--------------------------*/
+
+.NavMenu {
+    background-color: black;
+}
+
+.navbar {
+    width: 100%;
+    color: #808080;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar img {
+    width: 100px;
+}
+
+.navbar .nav-item {
+    position: relative;
+    margin-right: 10px;
+} 
+
+.navbar .sub-menu {
+    display: none;
+    position: absolute;
+    left: 8px;
+    right: 0px;
+    top: 37px;
+    min-width: 170px;
+    list-style: none;
+    margin: 0px;
+    padding: 10px;
+    background-color: white;
+}
+
+.navbar .has-menu i {
+    margin-left: 3px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar .has-menu:hover > .sub-menu {
+    display: block;
+    box-shadow: 0px 5px 15px -2px #000000;
+}
+
+.navbar .sub-menu > li {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+.navbar .sub-menu > li > a {
+    text-align: left;
+    display: block;
+    padding: 12px 8px;
+}
+
+.navbar .sub-menu > li:hover > a {
+    background-color: #CDB654;
+    color: white;
+}
+
+.navbar input {
+    height: 30px;
+    border-radius: 1px;
+}
+
+.navbar button {
+    border: 0px;
+    background-color: inherit;
+}
+
+.MobileMenu {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.MobileMenu > div {
+    font-weight: 600;
+    font-size: large;
+    color: #CDB654;
+}
+
+.MobileMenu button {
+    color: #CDB654;
+    background-color: inherit;
+    border: 2px solid #CDB654;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.menuSide {
+    position: fixed;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9000;
+    background-color: rgba(0,0,0,0.7);
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+.menuSide > ul {
+    position: absolute;
+    list-style: none;
+    top: 83px;
+    left: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.menuSide li {
+    margin-bottom: 20px;
+}
+
+.menuSide .closeBtn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 80%;
+    border: 0px;
+    color: #808080;
+    background-color: transparent;
+    font-size: 35px;
+}
+
+#scrollTop {
+    position: fixed;
+    display: none;
+    border: 0px;
+    border-radius: 50%;
+    outline: none;
+    color: white;
+    background-color: black;
+    bottom: 40px;
+    right: 40px;
+    font-size: 17px;
+    width: 50px;
+    height: 50px;
+}
+
+/*--------------------------Header Banner--------------------------*/
+
+.TopBanner img {
+    height: 700px;
+}
+
+.TopBanner .bannerText {
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    top: 55%;
+    width: 1000px;
+    left: 18%;
+}
+
+.TopBanner .bannerText > h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: fit-content;
+    font-size: 55px;
+    color: #CDB654;
+    background-color: rgb(255, 255, 255, 0.7);;
+}
+
+.TopBanner .bannerText > p {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 19px;
+    background-color: rgb(255, 255, 255, 0.7);;
+}
+
+/*--------------------------Intro Section--------------------------*/
+
+.intro {
+    text-align: center;
+    color: #808080;
+}
+
+.intro .intro-text {
+    padding: 10px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    height: 100%;
+}
+
+.intro .intro-text h2 {
+    font-size: 40px;
+    color: black;
+}
+
+.intro .intro-text p {
+    margin-bottom: 25px;
+}
+
+.intro a {
+    font-weight: bold;
+    color: #CDB654;
+    border: 1px solid #CDB654;
+    box-shadow: 1px -1px 0px 2px #CDB654;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.intro a:hover {
+    color: white;
+    background-color: #CDB654;
+}
+
+.intro img {
+    width: 100%;
+}
+
+/*--------------------------Mobile stuff--------------------------*/
+
+@media (max-width: 767.98px) {
+    .TopHeader,.navbar {
+        display: none;
+    }
+
+    .TopBanner img {
+        height: 500px;
+    }
+
+    .TopBanner .bannerText {
+        font-size: initial;
+        position: absolute;
+        z-index: 20;
+        text-align: center;
+        top: 27%;
+        width: 330px;
+        left: 2%;
+    }
+
+    .TopBanner .bannerText > h1 {
+        font-size: 50px;
+    }
+
+    .TopBanner .bannerText > p {
+        display: none;
+    }
+
+}
