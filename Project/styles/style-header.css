@@ -45,7 +45,7 @@ a:hover,.active {
 
 /*--------------------------Navigation Elements--------------------------*/
 
-.NavMenu {
+.DesktopMenu {
     background-color: black;
 }
 
@@ -116,19 +116,19 @@ a:hover,.active {
     background-color: inherit;
 }
 
-.MobileMenu {
+.MobileBar {
     text-align: center;
     padding: 20px;
     background-color: black;
 }
 
-.MobileMenu > div {
+.MobileBar > div {
     font-weight: 600;
     font-size: large;
     color: #CDB654;
 }
 
-.MobileMenu button {
+.MobileBar button {
     color: #CDB654;
     background-color: inherit;
     border: 2px solid #CDB654;
@@ -137,7 +137,7 @@ a:hover,.active {
     margin-right: 5px;
 }
 
-.menuSide {
+.MobileMenu {
     position: fixed;
     width: 0;
     height: 100%;
@@ -151,7 +151,7 @@ a:hover,.active {
     overflow-x: hidden;
 }
 
-.menuSide > ul {
+.MobileMenu > ul {
     position: absolute;
     list-style: none;
     top: 83px;
@@ -161,11 +161,11 @@ a:hover,.active {
     color: white;
 }
 
-.menuSide li {
+.MobileMenu li {
     margin-bottom: 20px;
 }
 
-.menuSide .closeBtn {
+.MobileMenu .closeBtn {
     display: none;
     position: absolute;
     top: 10px;

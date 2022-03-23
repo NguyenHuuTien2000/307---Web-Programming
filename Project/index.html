@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="NavMenu sticky-top">
+    <div class="DesktopMenu sticky-top">
         <div class="container">
             <div class="row">
                 <nav class="DesktopMenu navbar navbar-expand-lg">
@@ -76,10 +76,15 @@
             </div>
         </div>
     </div>
-    <nav class="MobileMenu sticky-top d-block d-md-none">
-        <div class="btnMenu"><button><i class="fa fa-align-justify"></i></button> DANH MỤC SẢN PHẨM</div>
-    </nav>
-    <aside class="menuSide d-md-none">
+    <div class="MobileBar sticky-top d-block d-md-none">
+        <div class="btnMenu">
+            <button>
+                <i class="fa fa-align-justify"></i>
+            </button> 
+            DANH MỤC SẢN PHẨM
+        </div>
+    </div>
+    <nav class="MobileMenu d-md-none">
         <button class="closeBtn">&times</button>
         <ul>
             <li><a>TRANG CHỦ</a></li>
@@ -89,7 +94,7 @@
             <li><a>TIN TỨC</a></li>
             <li><a>LIÊN HỆ</a></li>
         </ul>
-    </aside>
+    </nav>
 
     <header>
         <div class="TopBanner">
@@ -535,7 +540,7 @@
     <script>
 
         let btnMenu = document.querySelector(".btnMenu");
-        let side = document.querySelector(".menuSide");
+        let side = document.querySelector(".MobileMenu");
         btnMenu.addEventListener("click", function () {
             side.style.width = "200px";
             side.children[0].style.display = "block";
@@ -567,7 +572,6 @@
                 let scroll = 0;
                 if (anchor.innerText === 'GIỚI THIỆU') {
                     scroll += document.querySelector(".IntroSection").offsetTop;
-
                 }
                 if (anchor.innerText === 'DỊCH VỤ') {
                     scroll += document.querySelector(".ServiceSection").offsetTop;
@@ -578,7 +582,6 @@
                 if (anchor.innerText === 'TIN TỨC') {
                     scroll += document.querySelector(".NewsSection").offsetTop;
                 }
-
                 if (anchor.innerText === 'LIÊN HỆ') {
                     scroll += document.querySelector(".FooterSection").offsetTop;
                 }
