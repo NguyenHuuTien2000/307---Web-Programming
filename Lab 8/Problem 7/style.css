@@ -1,0 +1,49 @@
+.sideList {
+    border: 1px solid black;
+    height: 900px;
+    padding: 10px;
+}
+
+.sideList li {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.mainContainer {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.mainContainer .formContainer {
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.mainContainer .title {
+    padding: 10px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid lightgray;
+}
+
+.mainContainer .form {
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mainContainer td, .mainContainer th {
+    border: none !important;
+}
+
+.mainContainer table span {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.mainContainer button {
+    margin-right: 10px;
+}
+
+.mainContainer .backBtn {
+    display: none;
+}

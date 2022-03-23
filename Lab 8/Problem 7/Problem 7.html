@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sideList">
+                    <h2>Class List</h2>
+                    <ul id="classGroup">
+                        <li class="item">Class 1</li>
+                        <li class="item">Class 2</li>
+                    </ul>
+                    <button class="btn btn-primary showBtn" type="submit">Show All</button>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="mainContainer">
+
+                    <div class="formContainer">
+                        <div class="title">Edit student's information</div>
+                        <div class="editForm form">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control" name="ID" id="ID"
+                                            placeholder="Student ID" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="Name" id="Name"
+                                            placeholder="Student Name" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="email" class="form-control" name="Email" id="Email"
+                                            placeholder="Student Email" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="custom-select" name="Class" id="Class">
+                                            <option value="Lớp 1" selected>Lớp 1</option>
+                                            <option value="Lớp 2">Lớp 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-primary editBtn" type="submit">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formContainer">
+                        <div class="title">Search students by name</div>
+                        <div class="searchForm form">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="searchName" id="searchName"
+                                            placeholder="Student Name" required>
+                                    </div>
+                                    <button class="btn btn-primary findBtn" type="submit">Find</button>
+                                    <button class="btn btn-secondary backBtn">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tableContainer">
+                        <div class="title">Student List</div>
+                        <table class="table">
+                            <colgroup>
+                                <col class="col1">
+                                <col class="col2">
+                                <col class="col3">
+                                <col class="col4">
+                            </colgroup>
+
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Function</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Name</td>
+                                    <td>email@gmail.com</td>
+                                    <td>
+                                        <span class="edit">Edit</span>
+                                        <span class="del">Delete</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let studentList, studentIndex, classList;
+
+        $.get('http://45.76.156.126/getdata.php',
+            {
+                Type: 'Student'
+            },
+            function (data) {
+                studentList = data;
+                studentList.sort(function (student1, student2) {
+                    if (student1.Name > student2.Name) return 1;
+                    if (student1.Name < student2.Name) return -1;
+                    return 0;
+                });
+
+                showStudents(studentList);
+            }, 'json');
+
+        $.get('http://45.76.156.126/getdata.php',
+            {
+                Type: 'Class'
+            },
+            function (data) {
+                classList = data;
+                showClasses(classList);
+            }, 'json');
+
+        $('#classGroup').on('click', '.item', function () {
+            $(this).addClass('selected');
+            $('#classGroup .item').not(this).removeClass('selected');
+            showByClasses();
+        });
+
+        $(".form").submit(function (e) {
+            e.preventDefault();
+        });
+
+        $('.editBtn').on('click', function () {
+            if ($(this).text() === 'Add') {
+
+                let newStudent = {
+                    Class: $('#Class').val(),
+                    Email: $('#Email').val(),
+                    ID: $('#ID').val(),
+                    Name: $('#Name').val(),
+                };
+
+
+                for (let data in newStudent) {
+                    if (newStudent[data] === '') {
+                        window.alert('Please fill out the fields before submitting');
+                        return;
+                    }
+                }
+
+                if (studentList.map(student => student.ID).includes(newStudent.ID)) {
+                    window.alert('A student with the same ID already exists');
+                } else {
+                    studentList.unshift(newStudent);
+                    showStudents(studentList);
+                    clearInputFields();
+                }
+
+            } else {
+                let student = studentList[studentIndex];
+                student.Class = $('#Class').val();
+                student.ID = $('#ID').val();
+                student.Name = $('#Name').val();
+                student.Email = $('#Email').val();
+                $('.editBtn').text('Add');
+                showStudents(studentList);
+                clearInputFields();
+            }
+        });
+
+        $('tbody').on('click', '.edit', function (e) {
+            let target;
+            if (e.target.className == 'edit') {
+                target = e.target;
+            } else {
+                target = e.target.parentElement;
+            }
+
+            if (target.innerText == 'Edit') {
+                $('.edit').html('Edit');
+                target.innerHTML = '&times';
+
+                let id = target.getAttribute('data-id');
+                studentIndex = studentList.map(student => student.ID).indexOf(id);
+                let student = studentList[studentIndex];
+
+                $('#ID').val(student.ID);
+                $('#Name').val(student.Name);
+                $('#Email').val(student.Email);
+                $('#Class').val(student.Class);
+
+                $('.editBtn').text('Submit');
+                $('#ID').focus();
+            } else {
+                target.innerHTML = 'Edit';
+                $('.editBtn').text('Add');
+                clearInputFields();
+            }
+        });
+
+        $('tbody').on('click', '.del', function (e) {
+            let id = e.target.getAttribute('data-id');
+            let index = studentList.map(student => student.ID).indexOf(id);
+
+            if (confirm('Delete student ' + studentList[index].Name + '?')) {
+                studentList.splice(index, 1);
+                showStudents(studentList);
+                clearSearchFields();
+            }
+        });
+
+        $('.findBtn').on('click', function () {
+            let text = $('#searchName').val();
+
+            if (text) {
+                let list = studentList.filter(student => {
+                    if (student.Name.includes(text)) {
+                        return student;
+                    }
+                });
+                showStudents(list);
+                $('.backBtn').css('display', 'inline-block');
+            }
+        });
+
+        $('.backBtn').on('click', function () {
+            clearSearchFields();
+            showStudents(studentList);
+        });
+
+        $('.showBtn').on('click', function () {
+            $('#classGroup .item').removeClass('selected');
+            showStudents(studentList);
+        })
+
+
+
+        function showByClasses() {
+            let classes = Array.from($('.selected')).map((classes) => {
+                return classes.innerText;
+            });
+
+            if (!classes.length) {
+                showStudents(studentList);
+            } else {
+                let list = studentList.filter((element) => {
+                    if (classes.includes(element.Class)) {
+                        return element;
+                    }
+                });
+                showStudents(list);
+            }
+        }
+
+        function showStudents(studentList) {
+            let str = '', index = 1;
+            for (let student of studentList) {
+                str += `<tr>
+                    <td>${(index++)}</td>
+                    <td>${student.Name}</td>
+                    <td>${student.Email}</td>
+                    <td><span class="edit" data-id='${student.ID}'>Edit</span>
+                        <span class="del" data-id='${student.ID}'>Delete</span>
+                    </td></tr>`;
+            }
+            $('tbody').html(str);
+        }
+
+        function showClasses(classList) {
+            let listItems = ``, options = ``;
+
+            for (let classes of classList) {
+                listItems += `<li class="item">${classes}</li>`;
+                options += `<option value='${classes}'>${classes}</option>`;
+            }
+            $('#classGroup').html(listItems);
+            $('#Class').html(options);
+        }
+
+        function clearSearchFields() {
+            $('#searchName').val('');
+            $('.backBtn').css('display', 'none');
+        }
+
+        function clearInputFields() {
+            $('#Email').val('');
+            $('#ID').val('');
+            $('#Name').val('');
+            $('#Class').val(classList[0]);
+        }
+
+    </script>
+</body>
+
+</html>
